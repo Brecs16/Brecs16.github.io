@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM Who? - Indovina il Personaggio</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./Js/steamwho.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>STEAM Who?</h1>
+        <p class="subtitle">Indovina il personaggio famoso STEAM</p>
+ 
+        <div id="startScreen" class="screen active">
+            <div class="start-screen">
+                <div class="instructions">
+                    <h3>Come giocare:</h3>
+                    <ol>
+                        <li>Pensa a uno dei 20 personaggi STEAM dalla lista</li>
+                        <li>Rispondi alle domande con SÌ o NO</li>
+                        <li>Il sistema indovinerà il tuo personaggio!</li>
+                    </ol>
+                </div>
+                <button class="btn" onclick="showCharacterSelection()">Inizia il Gioco</button>
+            </div>
+        </div>
+ 
+        <div id="selectionScreen" class="screen">
+            <h2 style="text-align: center; margin-bottom: 20px;">Scegli un personaggio (mentalmente)</h2>
+            <p style="text-align: center; margin-bottom: 20px;">
+                Scorri la lista e memorizza il tuo personaggio. Non dirlo a nessuno!
+            </p>
+            <div class="character-list" id="characterList"></div>
+            <div style="text-align: center;">
+                <p style="margin: 20px 0; font-weight: 500; color: #cbd5e0;">Hai scelto il tuo personaggio?</p>
+                <button class="btn" onclick="startGame()">Ho scelto, iniziamo!</button>
+            </div>
+        </div>
+ 
+        <div id="questionScreen" class="screen">
+            <div class="question-box">
+                <div class="question-text" id="questionText"></div>
+                <div>
+                    <button class="btn btn-yes" onclick="answerQuestion(true)">✓ SÌ</button>
+                    <button class="btn btn-no" onclick="answerQuestion(false)">✗ NO</button>
+                </div>
+            </div>
+            <div id="errorMessage" class="error-message" style="display:none; text-align:center;"></div>
+        </div>
+ 
+        <div id="resultScreen" class="screen">
+            <div class="result-screen">
+                <div class="result-icon">🎯</div>
+                <h2>Ho indovinato!</h2>
+                <div class="character-card">
+                    <div class="character-name" id="resultName"></div>
+                    <div class="character-info" id="resultInfo"></div>
+                </div>
+                <button class="btn" onclick="resetGame()">Gioca ancora</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
